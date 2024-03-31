@@ -256,9 +256,7 @@ p.forecast-temp{
     border: 1.2mm solid #F5D6DE;
     margin-top: 4.5px;
     height:38px;
-    width:305px;
-    float:right;
-    
+    width:305px; 
 }
 
 .highLow{
