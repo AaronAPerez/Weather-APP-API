@@ -75,9 +75,12 @@ function showTasks() {
 
   let newLiTag = "";
   favArr.forEach((element, index) => {
-    newLiTag += `<li>${element}<span class="icon" onclick="deleteTask(${index})"><i class="fas fa-trash"></i></span></li>`;
-   // <li> elements being created
+    // Append task text to newLiTag with an onclick event to call weatherFunction()
+    newLiTag += `<li onclick="fetchCurrentWeather('${element}') + displayCurrentWeather(data) + fetchForecast('${element}') + displayForecast(data)">${element}<span class="icon" onclick="deleteTask(${index})"><i class="fas fa-trash"></i></span></li>`;
+    console.log(element);
+    console.log(index);
   });
+
   todoList.innerHTML = newLiTag; //adding new li tag inside ul tag
   searchInput.value = ""; //once task added leave the input field blank
 }
