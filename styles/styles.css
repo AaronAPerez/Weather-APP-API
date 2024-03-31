@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Tienne:wght@400;700;900&display=swap');
+
+body {
+    background-image: url("../media/dreamyBackground\ 1.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Tienne, serif !important;
+}
+
+#timeCol {
+  padding-top: 25%;
+}
+
+sub {
+    vertical-align: sub;
+    font-size: small;
+}
+
+div.weatherContainer{
+    background: rgba(160, 207, 225, 0.9);
+    border: 25px solid rgba(245, 214, 222, 0.55);
+    border: 1.5mm solid #F5D6DE;
+    width: 92%;
+    gap: 0px;
+    border: 25px 0px 0px 0px;
+    opacity: 0px;
+}
+
+
+.inputfield input {
+    width: 85%;
+    height: 100%;
+    outline: none;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    font-size: 17px;
+    padding-left: 15px;
+    transition: all 0.3s ease;
+  }
+  
+  .inputfield input:focus {
+    border-color: #5877ff;
+  }
+  
+  .inputfield button {
+    width: 50px;
+    height: 100%;
+    border: none;
+    color: #fff;
+    margin-left: 5px;
+    font-size: 21px;
+    outline: none;
+    background: #6063ff;
+    cursor: pointer;
+    border-radius: 3px;
+    opacity: 0.6;
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+  
+  .inputfield button:hover,
+  .footer button:hover {
+    background: #2d57b3;
+  }
+  
+  .inputfield button.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  .Wrapper .todoList {
+    max-height: 250px;
+    overflow-y: auto;
+  }
+  
+  .todoList li {
+    padding: 10%;
+    position: relative;
+    color: #fff;
+    list-style: none;
+    height: 45px;
+    line-height: 45px;
+    margin-bottom: 8px;
+    border-radius: 3px;
+    padding: 0 15px;
+    cursor: default;
+    overflow: hidden;
+    font-family: Tienne;
+font-size: 30px;
+font-weight: 400;
+line-height: 45px;
+text-align: left;
+
+  }
+  .todoList li .icon {
+    position: absolute;
+    right: 0px;
+    width: 45px;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .todoList li:hover .icon {
+    right: 0px;
+  }
+  .Wrapper .footer {
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer button {
+    padding: 6px 10px;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-weight: 400;
+    font-size: 16px;
+    margin-left: 5px;
+    background: #709cfc;
+    cursor: pointer;
+    user-select: none;
+    opacity: 0.6;
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+  .footer button.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  
+  .offcanvas-title{
+    color: rgba(255, 255, 255, 1);
+    font-family: Tienne;
+    font-size: 50px;
+    font-weight: 400;
+    padding: 10%;
+  }
+  
+
+  
+  
+  .offcanvas-body{
+    background: rgba(160, 207, 225, 0.9);
+  }
+   
+  
+  .btn.favorites:hover{
+    background-color: rgba(245, 214, 222, 0.5);
+  }
+  
+ .offcanvas{
+    background: rgba(160, 207, 225, 0.9);
+ }
+
+.current-weather-info{
+    color: rgba(255, 255, 255, 1);
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 10rem;
+    font-weight: 400;
+    padding-left: 15%;
+}
+
+h2{
+    display: flex;
+    justify-content: left;
+    font-size: 5rem;
+    padding-top: 6%;
+}
+
+p {
+    font-size: 25px;
+    margin-bottom: 0;
+    color: rgba(182, 127, 215, 1);
+}
+
+b {
+  font-size: 2.7rem;
+  color: rgba(182, 127, 215, 1);
+}
+
+p.forecast-temp{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather-card{
+    justify-content: center;
+    align-content: center;
+    height: 212px;
+    min-width: 15%;
+    background-color: rgba(255, 255, 255, 1);
+    margin: 5px;
+    border-radius:7%;
+    size: medium;
+    margin-top:13px;
+    padding: 1%;
+}
+
+.currentTemp{
+    color:#ffffff;
+    font-size: 170px;
+    margin-left: 10%;
+   margin-bottom: -10px; 
+}
+
+.cardTemp{
+    display:flex;
+    justify-content: center;
+    color:#B67FD7;
+    font-size: 50px;
+    margin-top: -10%;
+}
+
+.weekDay{
+    margin-top: 7%;
+    color:#B67FD7;
+    font-size: 26px;
+}
+
+.dayOfWeek{
+    font-size: 95px;
+    color:#ffffff;
+
+}
+
+#weatherIcon{
+  margin-top:-2%;  
+}
+
+.citySearch{
+    font-size: 40px;
+    color: #ffffff;
+    float:right;
+}
+
+.Wrapper.search-input {
+	background-image: none !important;
+	padding-left: 10px !important;
+}
+
+
+#cityInput{
+    background: rgba(160, 207, 225, 0.9);
+    border: 1.2mm solid #F5D6DE;
+    margin-top: 4.5px;
+    height:38px;
+    width:305px;
+    float:right;
+    
+}
+
+.highLow{
+    font-size:18px;
+    color:#ffffff;
+    margin-top: 150px;
+
+}
+
+#currentWeatherIcon{
+    height:300px;
+    width: 300px;
+    margin-top: -85px;
+  
+}
+
+#p1, .currentTime{
+    color: #ffffff;
+    font-size: 2.2rem;
+}   
