@@ -1,4 +1,5 @@
-let cityData = [];
+let cityDataNow = [];  // will hold the data from the async function current weather
+let cityDataForecast = [];  // will hold the data from the async function forecast weather
 let favArr = [];
 
 // Get required elements
@@ -76,13 +77,19 @@ function showTasks() {
   let newLiTag = "";
   favArr.forEach((element, index) => {
     // Append task text to newLiTag with an onclick event to call weatherFunction()
-    newLiTag += `<li onclick="fetchCurrentWeather('${element}') + displayCurrentWeather(data) + fetchForecast('${element}') + displayForecast(data)">${element}<span class="icon" onclick="deleteTask(${index})"><i class="fas fa-trash"></i></span></li>`;
+    newLiTag += `<li onclick="runAllWeather('${element}')">${element}<span class="icon" onclick="deleteTask(${index})"><i class="fas fa-trash"></i></span></li>`;
     console.log(element);
     console.log(index);
   });
 
   todoList.innerHTML = newLiTag; //adding new li tag inside ul tag
   searchInput.value = ""; //once task added leave the input field blank
+}
+
+// this function will change the input's value so that you can click the search button again to run with the updated city from the favorites offcanvas
+function runAllWeather(favArrElement){
+  cityInput.value = favArrElement;
+  
 }
 
 
@@ -115,6 +122,7 @@ async function fetchCurrentWeather() {
     return;
   }
   const data = await response.json();
+  cityDataNow = data;
   return data;
 }
 
@@ -147,6 +155,7 @@ async function fetchForecast() {
 
   const response = await fetch(url);
   const data = await response.json();
+  cityDataForecast = data;
   return data;
 }
 
@@ -233,3 +242,5 @@ cityInput.addEventListener("keyup", e => e.key === "Enter" && getCityCoordinates
 
 
 
+console.log(cityDataNow.name);
+console.log(cityDataForecast);
