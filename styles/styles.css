@@ -70,8 +70,8 @@ div.weatherContainer{
     pointer-events: auto;
   }
   
-  .Wrapper .todoList {
-    max-height: 250px;
+  .todoList {
+    max-height: 400px;
     overflow-y: auto;
   }
   
@@ -88,10 +88,10 @@ div.weatherContainer{
     cursor: default;
     overflow: hidden;
     font-family: Tienne;
-font-size: 30px;
-font-weight: 400;
-line-height: 45px;
-text-align: left;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1opx;
+    text-align: left;
 
   }
   .todoList li .icon {
@@ -107,13 +107,20 @@ text-align: left;
   .todoList li:hover .icon {
     right: 0px;
   }
-  .Wrapper .footer {
+
+  li:hover{
+    background-color: #ff9eb5a6;
+    cursor: pointer;
+  }
+
+  .footer {
     display: flex;
     width: 100%;
     margin-top: 20px;
     align-items: center;
     justify-content: space-between;
   }
+
   .footer button {
     padding: 6px 10px;
     border-radius: 3px;

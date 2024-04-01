@@ -5,7 +5,6 @@ let favArr = []; //Array to store favorite cities (from local storage).
 //DOM elements are retrieved using getElementById and querySelector for search bar, buttons, and weather display sections.
 const searchBar = document.getElementById("searchBar");
 const saveBtn = document.getElementById("saveBtn");
-const injectHere = document.getElementById("injectHere");
 const displayName = document.getElementById("displayName");
 const sprite = document.getElementById("sprite");
 const deleteBtn = document.getElementById("deleteBtn");
@@ -94,11 +93,17 @@ function showTasks() {
 }
 
 // runAllWeather Function (for Favorites)
-function runAllWeather(favArrElement){ // This function is called when a favorite city is clicked in the list.
-  cityInput.value = favArrElement; // sets the value of the search input field (cityInput) to the clicked city name.
-  
-}
+// Fetches current and 5 day weather by clicking favorite city
+async function runAllWeather(favArrElement) {
+  cityInput.value = favArrElement;
+  const currentWeatherData = await fetchCurrentWeather();
+  displayCurrentWeather(currentWeatherData);
 
+  const forecastData = await fetchForecast();
+  const forecastDays = forecastData.list;
+  const filteredForecast = filterData(forecastDays);
+  displayForecast(filteredForecast);
+}
 
 // Delete task function
 function deleteTask(index) {
