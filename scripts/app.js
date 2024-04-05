@@ -146,18 +146,46 @@ async function fetchCurrentWeather() {
 // Takes weather data as input
 // Uses string interpolation to create HTML content for displaying current weather information including city name, temperature, high/low, description, feels like, pressure, and an icon
 function displayCurrentWeather(data) {
-  document.querySelector('.current-weather-info').innerHTML = `
-    <h3>${data.name}, ${data.sys.country}</h3>
-    <h1>${Math.round(data.main.temp)}°</h1>
-    <h6>HIgh ${data.main.temp_max}°</h6>
-    <h6>Low ${data.main.temp_min}°</h6>
- 
-    <h6>${data.date}°</h6>
-    <img id="current-weather-icon">
-    <h4>${data.weather[0].description}</h4>  
-    <h6>Feels like: ${data.main.feels_like}°F</h6>`
-  // <h6>Pressure: ${data.pressure}</h6>
-  // <h6>Humidity ${data.main.humidity}%</h6>
+  document.querySelector('.current-weather-info').innerHTML = 
+    `<div class="container">
+        <div class="container">
+            <div class="current-weather-info">
+              <div class="row">
+                    <div class="col-5 mx-auto">
+                      <div class="row">
+                          <div class="col ">
+                            <p>
+                              <h2 id="currentDate">${(data.main.day)}</h2>
+                            </p>
+                          </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <h1>${Math.round(data.main.temp)}°</h1>
+                        </div>
+                        <div class="col pt-5 my-5">
+                          <h6>HIgh ${Math.round(data.main.temp_max)}°</h6>
+                          <h6>Low ${Math.round(data.main.temp_min)}°</h6>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <img id="current-weather-icon" width="375rem">
+                    </div>
+                    <div class="col" id="timeCol">
+                      <p id="p1">3:13 p.m.</p>
+                    <div class="date-time">
+                      <p id="date-time"></p>
+                    </div>
+                      <h3>${data.name}, ${data.sys.country}</h3>
+                </div>
+            </div>
+        </div>
+    </div>`
+    // <h4>${data.weather[0].description}</h4>  
+    // <h6>Feels like: ${data.main.feels_like}°F</h6>
+    // <h6>Pressure: ${data.pressure}</h6>
+    // <h6>Humidity ${data.main.humidity}%</h6>
 
   // Setting the icon
   document.querySelector('#current-weather-icon').setAttribute('src', `https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`);
