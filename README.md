@@ -16,5 +16,7 @@ Build out a weather app. <br>
 * Desktop only build <br>
 * Must pull api from https://openweathermap.org/ <br>
 
-Reviewed by:    <br>
+Reviewed by: Alicia Bryant
+
+The design looks like the figma! Everything is connected and updates as it should. The favorites list works as well. Good job.
 
